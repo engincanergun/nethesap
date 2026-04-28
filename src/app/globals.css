@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 800px at 20% -10%, rgba(59, 130, 246, 0.12), transparent 60%),
+    radial-gradient(1000px 700px at 90% 0%, rgba(34, 197, 94, 0.10), transparent 55%),
+    theme(colors.brand.bg);
+  color: theme(colors.brand.text.primary);
+  overflow-x: hidden;
+}
+
+:root {
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-montserrat);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth anchor navigation for the top band */
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .nh-gradient-text {
+    background-image: linear-gradient(90deg, #1e3a8a 0%, #2563eb 45%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .nh-gradient-line {
+    background-image: linear-gradient(90deg, #1e3a8a 0%, #2563eb 45%, #3b82f6 100%);
+  }
+}
+
+@layer components {
+  .nh-surface {
+    @apply rounded-card border border-slate-200/70 bg-white/60 shadow-soft md:backdrop-blur;
+  }
+
+  .nh-surface-strong {
+    @apply rounded-card border border-slate-200/70 bg-white/70 shadow-soft md:backdrop-blur;
+  }
+
+  .nh-card-hover {
+    @apply transition hover:-translate-y-0.5 hover:shadow-card;
+  }
+
+  .nh-pill {
+    @apply inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/60 px-4 py-2 text-sm font-semibold text-brand-text-primary shadow-soft md:backdrop-blur transition hover:bg-white/70 focus:outline-none focus:ring-4 focus:ring-slate-900/10;
+  }
+
+  .nh-pill-gradient-text {
+    @apply nh-pill;
+  }
+}
+
+
