@@ -55,7 +55,7 @@ export default function BruttenNetHesaplamaPage() {
         </p>
 
         <div className="mt-5 flex flex-wrap gap-3">
-          <Link href="/dashboard" className="nh-pill">
+          <Link href="/dashboard/bordro-hesaplama" className="nh-pill">
             Brütten net hesapla
           </Link>
           <Link href="/net-maas-hesaplama" className="nh-pill">

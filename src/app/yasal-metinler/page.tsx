@@ -4,8 +4,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { CalculationMenu } from "@/components/CalculationMenu";
 
 export const metadata: Metadata = {
-  title: "Yasal Metinler — NetHesap",
-  description: "NetHesap yasal uyarı ve kullanım koşulları.",
+  title: "Yasal uyarı ve kullanım koşulları",
+  description: "NetHesap kullanım koşulları, sorumluluk reddi ve bilgilendirme metinleri.",
+  alternates: { canonical: "/yasal-metinler" },
 };
 
 export default function LegalTextsPage() {

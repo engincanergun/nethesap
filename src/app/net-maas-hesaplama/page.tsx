@@ -55,7 +55,7 @@ export default function NetMaasHesaplamaPage() {
         </p>
 
         <div className="mt-5 flex flex-wrap gap-3">
-          <Link href="/dashboard" className="nh-pill">
+          <Link href="/dashboard/bordro-hesaplama" className="nh-pill">
             Net maaşı şimdi hesapla
           </Link>
           <Link href="/isveren-maliyeti-hesaplama" className="nh-pill">

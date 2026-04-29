@@ -55,7 +55,7 @@ export default function IsverenMaliyetiHesaplamaPage() {
         </p>
 
         <div className="mt-5 flex flex-wrap gap-3">
-          <Link href="/dashboard" className="nh-pill">
+          <Link href="/dashboard/bordro-hesaplama" className="nh-pill">
             İşveren maliyetini hesapla
           </Link>
           <Link href="/brutten-net-hesaplama" className="nh-pill">

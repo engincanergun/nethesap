@@ -2,8 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Senaryo Simülasyonu — NetHesap",
+  title: "Senaryo simülasyonu",
   description: "Maaş ve teşvik parametrelerini değiştirin, fark analizini anında görün.",
+  alternates: { canonical: "/scenario" },
 };
 
 export default function ScenarioPage() {
@@ -22,7 +23,7 @@ export default function ScenarioPage() {
 
         <div className="mt-4">
           <Link
-            href="/dashboard"
+            href="/dashboard/bordro-hesaplama"
             className="nh-pill"
           >
             Bordro Hesaplama’ya dön
