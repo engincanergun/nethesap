@@ -17,9 +17,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NetHesap — Bordro artık net.",
+  title: {
+    default: "NetHesap — Bordro artık net.",
+    template: "%s — NetHesap",
+  },
   description: "Türkiye 2026 bordro hesaplama: net, brüt, işveren maliyeti ve detaylı kırılım.",
   metadataBase: new URL(getSiteUrl()),
+  alternates: {
+    canonical: "/",
+  },
+  applicationName: "NetHesap",
+  referrer: "origin-when-cross-origin",
+  creator: "NetHesap",
+  publisher: "NetHesap",
+  icons: {
+    icon: [{ url: "/logo.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/logo.png" }],
+  },
+  manifest: "/manifest.webmanifest",
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
   openGraph: {
     title: "NetHesap — Bordro artık net.",
     description: "Net maaş, işveren maliyeti, teşvik ve tazminat hesapları.",
@@ -40,8 +58,42 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const siteUrl = getSiteUrl();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: "NetHesap",
+        url: siteUrl,
+        logo: {
+          "@type": "ImageObject",
+          url: `${siteUrl}/logo.svg`,
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "NetHesap",
+        publisher: {
+          "@id": `${siteUrl}/#organization`,
+        },
+        inLanguage: "tr-TR",
+      },
+    ],
+  };
+
   return (
     <html lang="tr" className={`${montserrat.variable} ${inter.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen font-[var(--font-sans)] antialiased">
         <Analytics />
         {children}
