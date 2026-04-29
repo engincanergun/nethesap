@@ -3,6 +3,7 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { getSiteUrl } from "@/lib/site";
 import { Analytics } from "@/components/Analytics";
+import { Suspense } from "react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -95,7 +96,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen font-[var(--font-sans)] antialiased">
-        <Analytics />
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
         {children}
       </body>
     </html>
