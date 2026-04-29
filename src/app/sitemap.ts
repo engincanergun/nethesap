@@ -8,6 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "/",
     "/dashboard",
+    "/dashboard/payroll",
+    "/dashboard/severance",
     "/yasal-metinler",
     "/scenario",
     "/app",

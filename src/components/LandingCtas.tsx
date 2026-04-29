@@ -7,7 +7,7 @@ export function LandingCtas() {
   return (
     <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
       <Link
-        href="/dashboard?tab=payroll"
+        href="/dashboard/payroll"
         onClick={() => track("cta_click", { placement: "hero", label: "Ücretsiz Hesapla" })}
         className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg transition-all hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-600/50"
       >

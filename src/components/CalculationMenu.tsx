@@ -27,13 +27,13 @@ export function CalculationMenu({
       {
         label: "Maaş / Bordro Hesaplama",
         description: "Net maaş, kesintiler ve işveren maliyeti",
-        href: "/dashboard?tab=payroll",
+        href: "/dashboard/payroll",
         icon: <Calculator className="h-5 w-5" />,
       },
       {
         label: "Kıdem & İhbar Tazminatı",
         description: "Tavanlı kıdem + ihbar hesabı",
-        href: "/dashboard?tab=severance",
+        href: "/dashboard/severance",
         icon: <HandCoins className="h-5 w-5" />,
       },
     ],

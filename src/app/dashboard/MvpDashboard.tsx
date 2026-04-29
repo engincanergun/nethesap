@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Calculator, ClipboardList, HandCoins, Info, Landmark, PiggyBank, ShieldCheck, TrendingUp } from "lucide-react";
 import { calculatePayroll, payrollConfig2026, solveGrossFromNet, type IncentiveType } from "@/lib/payroll-engine";
@@ -621,9 +620,7 @@ function SeveranceModule() {
   );
 }
 
-export default function MvpDashboard() {
-  const searchParams = useSearchParams();
-  const initialTab = searchParams.get("tab") === "severance" ? "SEVERANCE" : "PAYROLL";
+export default function MvpDashboard({ initialTab = "PAYROLL" }: { initialTab?: "PAYROLL" | "SEVERANCE" }) {
   const [tab, setTab] = useState<"PAYROLL" | "SEVERANCE">(initialTab);
 
   return (
